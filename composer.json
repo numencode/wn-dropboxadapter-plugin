@@ -1,0 +1,42 @@
+{
+    "name": "numencode/wn-dropboxadapter-plugin",
+    "description": "NumenCode Dropbox Adapter plugin for Winter CMS",
+    "type": "winter-plugin",
+    "homepage": "https://www.numencode.com",
+    "keywords": ["winter cms", "winter", "plugin", "laravel", "numencode", "dropbox", "storage"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/numencode/wn-dropboxadapter-plugin/issues",
+        "source": "https://github.com/numencode/wn-dropboxadapter-plugin"
+    },
+    "authors": [
+        {
+            "name": "Blaz Orazem",
+            "email": "blaz@orazem.si",
+            "homepage": "https://orazem.si/",
+            "role": "Founder"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "winter/storm": "^1.2.7",
+        "spatie/flysystem-dropbox": "^3.0",
+        "composer/installers": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NumenCode\\DropboxAdapter\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-name": "dropboxadapter",
+        "installer-type": "winter-plugin"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
