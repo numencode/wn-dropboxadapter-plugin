@@ -1,6 +1,7 @@
 <?php namespace NumenCode\DropboxAdapter;
 
 use System\Classes\PluginBase;
+use NumenCode\DropboxAdapter\Console\DropboxSetupCommand;
 use NumenCode\DropboxAdapter\Providers\DropboxServiceProvider;
 
 class Plugin extends PluginBase
@@ -19,5 +20,15 @@ class Plugin extends PluginBase
     public function boot()
     {
         $this->app->register(DropboxServiceProvider::class);
+    }
+
+    public function register()
+    {
+        $this->registerConsoleCommands();
+    }
+
+    protected function registerConsoleCommands()
+    {
+        $this->registerConsoleCommand('numencode.dropboxadapter_setup', DropboxSetupCommand::class);
     }
 }

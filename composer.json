@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "winter/storm": "^1.2.7",
+        "winter/storm": "^1.2",
         "spatie/flysystem-dropbox": "^3.0",
         "composer/installers": "~1.0"
     },
