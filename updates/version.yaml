@@ -1,2 +1,6 @@
 1.0.1:
     - 'Initialize plugin'
+1.1.0:
+    - 'Add OAuth2 refresh token authentication and the dropboxadapter:setup command'
+2.0.0:
+    - '!!! Refresh token authentication only (temp_token mode removed), PKCE support, per-disk configuration and automatic token refresh. Requires PHP 8.2+. See the upgrade guide in CHANGELOG.md.'

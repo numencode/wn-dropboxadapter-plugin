@@ -1,34 +1,34 @@
-<?php namespace NumenCode\DropboxAdapter;
+<?php
 
-use System\Classes\PluginBase;
+declare(strict_types=1);
+
+namespace NumenCode\DropboxAdapter;
+
+use Illuminate\Support\Facades\Storage;
+use NumenCode\DropboxAdapter\Classes\DropboxDiskFactory;
 use NumenCode\DropboxAdapter\Console\DropboxSetupCommand;
-use NumenCode\DropboxAdapter\Providers\DropboxServiceProvider;
+use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public function pluginDetails()
+    public function pluginDetails(): array
     {
         return [
             'name'        => 'numencode.dropboxadapter::lang.plugin.name',
             'description' => 'numencode.dropboxadapter::lang.plugin.description',
             'author'      => 'Blaz Orazem',
             'icon'        => 'icon-dropbox',
-            'homepage'    => 'https://github.com/numencode/wn-dropboxadapter-plugin',
+            'homepage'    => 'https://www.numencode.com',
         ];
     }
 
-    public function boot()
+    public function register(): void
     {
-        $this->app->register(DropboxServiceProvider::class);
+        $this->registerConsoleCommand('numencode.dropboxadapter.setup', DropboxSetupCommand::class);
     }
 
-    public function register()
+    public function boot(): void
     {
-        $this->registerConsoleCommands();
-    }
-
-    protected function registerConsoleCommands()
-    {
-        $this->registerConsoleCommand('numencode.dropboxadapter_setup', DropboxSetupCommand::class);
+        Storage::extend('dropbox', (new DropboxDiskFactory())(...));
     }
 }
