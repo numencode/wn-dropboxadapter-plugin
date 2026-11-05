@@ -1,9 +1,9 @@
 {
     "name": "numencode/wn-dropboxadapter-plugin",
-    "description": "NumenCode Dropbox Adapter plugin for Winter CMS",
+    "description": "Dropbox (API v2) filesystem disk for Winter CMS with OAuth2 refresh tokens and PKCE support.",
     "type": "winter-plugin",
     "homepage": "https://www.numencode.com",
-    "keywords": ["winter cms", "winter", "plugin", "laravel", "numencode", "dropbox", "storage"],
+    "keywords": ["winter cms", "winter", "plugin", "laravel", "flysystem", "numencode", "dropbox", "storage", "backup", "oauth2"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/numencode/wn-dropboxadapter-plugin/issues",
@@ -14,14 +14,16 @@
             "name": "Blaz Orazem",
             "email": "blaz@orazem.si",
             "homepage": "https://orazem.si/",
-            "role": "Founder"
+            "role": "Maintainer"
         }
     ],
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.2",
+        "composer/installers": "^1.0 || ^2.0",
         "winter/storm": "^1.2",
-        "spatie/flysystem-dropbox": "^3.0",
-        "composer/installers": "~1.0"
+        "guzzlehttp/guzzle": "^7.2",
+        "spatie/dropbox-api": "^1.25",
+        "spatie/flysystem-dropbox": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -31,11 +33,11 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true
-        }
+        },
+        "sort-packages": true
     },
     "extra": {
-        "installer-name": "dropboxadapter",
-        "installer-type": "winter-plugin"
+        "installer-name": "dropboxadapter"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

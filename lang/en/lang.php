@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'plugin'    => [
+    'plugin' => [
         'name'        => 'Dropbox Adapter',
-        'description' => 'NumenCode Dropbox Adapter for Winter CMS.',
+        'description' => 'Dropbox filesystem disk for Winter CMS.',
     ],
 ];

@@ -1,30 +1,35 @@
 <?php
 
+/*
+ * Default credentials for "dropbox" disks. Every option can be overridden per disk in config/filesystems.php.
+ * To customize these defaults without touching the plugin, copy this file to
+ * config/numencode/dropboxadapter/config.php.
+ */
 return [
     /*
-     * The authentication mode for Dropbox.
-     * Can be 'refresh_token' (recommended for production) or 'temp_token' (for quick testing).
-     */
-    'auth_mode' => env('DROPBOX_AUTH_MODE', 'refresh_token'),
-
-    /*
-     * Your Dropbox App Key
+     * The App key of your Dropbox app (https://www.dropbox.com/developers/apps).
      */
     'app_key' => env('DROPBOX_APP_KEY'),
 
     /*
-     * Your Dropbox App Secret
+     * The App secret. Only needed for refresh tokens created with
+     * "php artisan dropboxadapter:setup --with-secret". Leave empty when using PKCE (the default).
      */
     'app_secret' => env('DROPBOX_APP_SECRET'),
 
     /*
-     * The Dropbox refresh token obtained via the `dropbox:setup` command.
+     * The long-lived refresh token, created with "php artisan dropboxadapter:setup".
      */
     'refresh_token' => env('DROPBOX_REFRESH_TOKEN'),
 
     /*
-     * A temporary Dropbox access token for testing purposes.
-     * Only used if 'auth_mode' is set to 'temp_token'.
+     * Cache store used for the short-lived access tokens (null = default cache store).
+     * Access tokens are stored encrypted with the application key.
      */
-    'temp_token' => env('DROPBOX_TEMP_TOKEN'),
+    'cache_store' => null,
+
+    /*
+     * Timeout in seconds for requests to the Dropbox OAuth2 endpoint.
+     */
+    'timeout' => 30,
 ];
