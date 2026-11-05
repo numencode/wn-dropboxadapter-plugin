@@ -137,7 +137,7 @@ storage, e.g. `php artisan syncops:db-push dropbox`.
   (Dropbox → Settings → Connected apps, or by regenerating the app).
 - Access tokens are cached encrypted with your application key (`APP_KEY`).
 
-If you discover a security issue, please email info@numencode.com instead of using the issue tracker.
+If you discover a security issue, please email <info@numencode.com> instead of using the issue tracker.
 
 ## Upgrading from 1.x
 
@@ -159,7 +159,7 @@ Please refer to the [CONTRIBUTING](CONTRIBUTING.md) guide for details on contrib
 The **NumenCode.DropboxAdapter** plugin is created and maintained by [Blaz Orazem](https://orazem.si/).
 More NumenCode plugins: [numencode.com](https://www.numencode.com).
 
-For inquiries, contact: info@numencode.com
+For inquiries, contact: <info@numencode.com>
 
 ## License
 
