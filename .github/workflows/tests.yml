@@ -50,6 +50,13 @@ jobs:
                   cp config/cms.php config/testing/cms.php
                   composer config --json extra.merge-plugin.include '["plugins/numencode/*/composer.json"]'
 
+            # Winter develop requires winter/storm with an alias ("dev-develop as 1.2"), which the merge
+            # plugin cannot combine with the plugin's own constraint – let the project define it.
+            - name: Drop the plugin's winter/storm constraint (develop only)
+              if: matrix.winter == 'dev-develop'
+              working-directory: winter/plugins/numencode/dropboxadapter
+              run: composer remove winter/storm --no-update --no-interaction
+
             - name: Install Composer dependencies
               working-directory: winter
               run: composer update --no-interaction --no-progress --prefer-dist
