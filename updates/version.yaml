@@ -4,3 +4,5 @@
     - 'Add OAuth2 refresh token authentication and the dropboxadapter:setup command'
 2.0.0:
     - '!!! Refresh token authentication only (temp_token mode removed), PKCE support, per-disk configuration and automatic token refresh. Requires PHP 8.2+. See the upgrade guide in CHANGELOG.md.'
+2.0.1:
+    - 'Maintenance release: same code as 2.0.0, published so Packagist refers to the tagged commit'

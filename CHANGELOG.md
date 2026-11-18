@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-11-18
+
+### Fixed
+
+- Packagist's metadata for 2.0.0 referred to a different commit than the git tag. This release has the same code as
+  2.0.0 and is the version to install.
+
 ## [2.0.0] - 2026-11-05
 
 ### Added
@@ -73,7 +80,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use case: enables Dropbox as a remote storage option for backups, sync operations, and custom filesystem logic.
 - Designed for integration with plugins like [`NumenCode.SyncOps`](https://github.com/numencode/wn-syncops-plugin).
 
-[Unreleased]: https://github.com/numencode/wn-dropboxadapter-plugin/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/numencode/wn-dropboxadapter-plugin/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/numencode/wn-dropboxadapter-plugin/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/numencode/wn-dropboxadapter-plugin/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/numencode/wn-dropboxadapter-plugin/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/numencode/wn-dropboxadapter-plugin/releases/tag/v1.0.0
